@@ -530,7 +530,7 @@ int main(int argc, char *argv[]) {
         .release();
   }
 
-  constexpr double WATCHDOG_TIMEOUT = 0.25;
+  constexpr double WATCHDOG_TIMEOUT = 1.0;
   auto watchdog_id = sched.create_actor_unsafe<Watchdog>(SharedData::get_watchdog_scheduler_id(), "Watchdog",
                                                          td::this_thread::get_id(), WATCHDOG_TIMEOUT);
 
